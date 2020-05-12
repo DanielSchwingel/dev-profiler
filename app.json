@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "dev-profiler",
+    "name": "Dev Profiler",
     "slug": "dev-profiler",
     "platforms": [
       "ios",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#282D43"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
