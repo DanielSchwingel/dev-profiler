@@ -4,8 +4,8 @@ import Constants from 'expo-constants';
 export default StyleSheet.create({
     container: {
         backgroundColor: '#D8D8D8',
-        alignItems: 'center',
-        flex: 1
+        flex: 1,
+        alignItems: 'center'
     },
 
     header: {
@@ -21,11 +21,12 @@ export default StyleSheet.create({
         marginLeft: '90%',
     },
 
-    body:{
-        alignItems: 'center',
-        backgroundColor: '#D8D8D8',
-        paddingLeft: 15,
-        paddingRight: 15
+    title:{
+        fontFamily: 'FredokaOne-Regular',
+        fontSize: 17,
+        color: '#41414d',
+        marginTop: 65,
+        marginBottom: 10
     },
 
     picture:{
@@ -33,17 +34,22 @@ export default StyleSheet.create({
         width: 120,
         borderRadius:80,
         position: 'absolute',
-        marginTop: -60,
+        marginTop: 60,
     },
 
     box:{
         backgroundColor: '#FFF',
         borderRadius: 8,
-        marginTop: 75,
-        minWidth:'100%'
+        marginLeft: '2.5%',
+        marginRight: '2.5%',
+        marginTop: 10,
+        maxWidth : '100%',
+        flexDirection: 'row',
+        padding: 15
+
     },
 
-    userProperty: {
+    followingProperty: {
         fontSize: 15,
         fontWeight: 'bold',
         color: '#41414d',
@@ -51,7 +57,7 @@ export default StyleSheet.create({
         marginTop:10
     },
 
-    userValue: {
+    followingValue: {
         fontSize: 14,
         color: '#737380',
         marginLeft: 10,
@@ -59,31 +65,29 @@ export default StyleSheet.create({
         textAlign: 'justify'
     },
 
-
-    obs:{
-        color: '#737380',
-        fontSize: 14,
-        marginTop: 10,
-        fontStyle: 'italic',
-        marginBottom: 10
+    followingPicture:{
+        height: 100,
+        width: 100,
     },
 
-    action: {
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+    followingData:{
+        flexDirection: 'column',
+        width: '60%',
     },
 
     button:{
         backgroundColor: '#F12639',
-        width: '48%',
-        marginBottom: 10,
+        width: '100%',
         height: 45,
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 8, 
         paddingLeft: 10, 
         paddingRight: 10,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 5
+
     },
 
     buttonText:{

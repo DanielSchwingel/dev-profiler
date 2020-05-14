@@ -25,12 +25,6 @@ export default function Repositories(){
         setRepositories(response.data);
     }
 
-    function getHeader(){
-        return {
-
-        }
-    }
-
     useEffect(() =>{
         loadRepositories();
     }, []);
