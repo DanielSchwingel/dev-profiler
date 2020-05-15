@@ -12,8 +12,6 @@ export default StyleSheet.create({
         backgroundColor: '#282D43',
         height: 120,
         paddingTop: Constants.statusBarHeight + 10,
-        flexDirection: 'row',
-        alignItems: 'stretch',
         width: '100%'
     },
 
@@ -29,28 +27,28 @@ export default StyleSheet.create({
         marginTop: 60,
     },
 
+    repositoryList :{
+        width: '90%'
+    },
+
     box:{
         backgroundColor: '#FFF',
         borderRadius: 8,
-        marginLeft: 10,
-        marginRight: 10,
         marginTop: 10,
-        minWidth: '90%',
+        paddingLeft: 10,
+        paddingRight: 10,
     },
 
     repositoryProperty: {
         fontSize: 15,
         fontWeight: 'bold',
         color: '#41414d',
-        marginLeft: 10,
         marginTop:10
     },
 
     repositoryValue: {
         fontSize: 14,
         color: '#737380',
-        marginLeft: 10,
-        marginRight: 10,
         textAlign: 'justify'
     },
 
@@ -84,10 +82,5 @@ export default StyleSheet.create({
         marginRight: 20,
         color: '#FFF'
     },
-
-    logoFooter: {
-        height: 40 ,
-        width: 52,
-    }
 
 });

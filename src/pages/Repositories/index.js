@@ -4,7 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
-import logoImg from '../../assets/logo.png'
+import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -40,6 +40,7 @@ export default function Repositories(){
             <Text style={styles.title}>REPOSITÓRIOS</Text>
             <Text style={styles.obs}>*Ultimos repositórios alterados*</Text>   
             <FlatList
+                style={styles.repositoryList}
                 data={repositories}
                 keyExtractor={repositorie => repositorie.node_id}
                 showsVerticalScrollIndicator={false}

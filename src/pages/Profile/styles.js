@@ -3,17 +3,15 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
+        flex: 1,
         backgroundColor: '#D8D8D8',
-        alignItems: 'center',
-        flex: 1
+        alignItems: 'center'
     },
 
     header: {
         backgroundColor: '#282D43',
         height: 120,
         paddingTop: Constants.statusBarHeight + 10,
-        flexDirection: 'row',
-        alignItems: 'stretch',
         width: '100%'
     },
 
@@ -21,44 +19,35 @@ export default StyleSheet.create({
         marginLeft: '90%',
     },
 
-    body:{
-        alignItems: 'center',
-        backgroundColor: '#D8D8D8',
-        paddingLeft: 15,
-        paddingRight: 15
-    },
-
     picture:{
         height: 120 ,
         width: 120,
         borderRadius:80,
         position: 'absolute',
-        marginTop: -60,
+        marginTop: 60,
     },
 
     box:{
         backgroundColor: '#FFF',
         borderRadius: 8,
         marginTop: 75,
-        minWidth:'100%'
+        width:'90%',
+        paddingLeft: 10,
+        paddingRight: 10,
     },
 
     userProperty: {
         fontSize: 15,
         fontWeight: 'bold',
         color: '#41414d',
-        marginLeft: 10,
         marginTop:10
     },
 
     userValue: {
         fontSize: 14,
         color: '#737380',
-        marginLeft: 10,
-        marginRight: 10,
         textAlign: 'justify'
     },
-
 
     obs:{
         color: '#737380',
@@ -69,7 +58,7 @@ export default StyleSheet.create({
     },
 
     action: {
-        width: '100%',
+        width: '90%',
         flexDirection: 'row',
         justifyContent: 'space-between'
     },

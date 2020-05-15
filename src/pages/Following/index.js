@@ -18,6 +18,10 @@ export default function Profile() {
         navigation.goBack();
     }
 
+    function analyzeFollowing(userLogin){
+        navigation.navigate('Profile', {userLogin});
+    }
+
     async function loadFollowing(){
         const response = await api.get(`users/${user.login}/following`);
         setFollowing(response.data);
@@ -37,6 +41,7 @@ export default function Profile() {
                 <Image source={{uri: user.avatar_url}} style={styles.picture} />
                 <Text style={styles.title}>SEGUINDO</Text>
                 <FlatList
+                style={styles.followingList}
                 data={following}
                 keyExtractor={follow => follow.node_id}
                 showsVerticalScrollIndicator={false}
@@ -46,7 +51,7 @@ export default function Profile() {
                         <View style={styles.followingData}>
                             <Text style={styles.followingProperty}>Usuário</Text>               
                             <Text style={styles.followingValue}>{follow.login}</Text>
-                            <TouchableOpacity style={styles.button} onPress={()=>{}}>
+                            <TouchableOpacity style={styles.button} onPress={()=>{analyzeFollowing(follow.login)}}>
                                 <Feather name="search" size={18} color="#FFF"/>
                                 <Text style={styles.buttonText}>ANALISAR</Text>
                             </TouchableOpacity>

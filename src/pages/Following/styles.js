@@ -12,8 +12,6 @@ export default StyleSheet.create({
         backgroundColor: '#282D43',
         height: 120,
         paddingTop: Constants.statusBarHeight + 10,
-        flexDirection: 'row',
-        alignItems: 'stretch',
         width: '100%'
     },
 
@@ -37,13 +35,15 @@ export default StyleSheet.create({
         marginTop: 60,
     },
 
+    followingList:{
+        width: '90%',
+    },
+
     box:{
         backgroundColor: '#FFF',
         borderRadius: 8,
-        marginLeft: '2.5%',
-        marginRight: '2.5%',
-        marginTop: 10,
-        maxWidth : '100%',
+        marginTop: 5,
+        marginBottom: 5,
         flexDirection: 'row',
         padding: 15
 

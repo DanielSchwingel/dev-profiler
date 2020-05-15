@@ -7,30 +7,17 @@ import styles from './styles';
 import api from '../../services/api';
 
 export default function Search () {
-    const [value, setValue] = useState('');
+    const [userLogin, setUserLogin] = useState('');
 
     const navigation = useNavigation();
 
     async function searchUser(){
-        if (value == ''){
+        if (userLogin == ''){
             return;
         }
-        await api.get(`users/${value}`)
-        .then(response => {
-            const {login , name, created_at, email, location, blog, company, bio, avatar_url, updated_at} = response.data;
-            let user = {
-                login,
-                name,
-                created_at,
-                email,
-                location,
-                blog,
-                company,
-                bio,
-                avatar_url,
-                updated_at
-            }
-            navigation.navigate('Profile', {user})
+        await api.get(`users/${userLogin}`)
+        .then(() => {
+            navigation.navigate('Profile', {userLogin})
         })
         .catch(() => {
             Alert.alert('Ops, não deu!','Dev não localizado no GitHub, verifique o valor informado!');
@@ -40,7 +27,7 @@ export default function Search () {
     return(
         <View style={styles.container}>
             <Image source={logoImg} style={styles.logo} />
-            <TextInput style={styles.input} value={value} onChangeText={value =>{setValue(value)}} />
+            <TextInput style={styles.input} value={userLogin} onChangeText={value =>{setUserLogin(value)}} />
             <TouchableOpacity style={styles.button} onPress={searchUser}>
                 <Text style={styles.buttonText}>PESQUISAR</Text>
             </TouchableOpacity>
