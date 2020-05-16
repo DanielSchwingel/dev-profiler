@@ -4,6 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
+import ListEmpty from '../../components/ListEmpty';
 import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -41,6 +42,7 @@ export default function Repositories(){
             <Text style={styles.obs}>*Ultimos repositórios alterados*</Text>   
             <FlatList
                 style={styles.repositoryList}
+                ListEmptyComponent={<ListEmpty/>}
                 data={repositories}
                 keyExtractor={repositorie => repositorie.node_id}
                 showsVerticalScrollIndicator={false}
@@ -67,7 +69,7 @@ export default function Repositories(){
                 )}
             />
             <View style={styles.footer}>
-                <Text style={styles.textFooter}>Fonte: API do GitHub</Text>
+                <Image source={logoImg} style={styles.logo}/>
             </View>                
         </View>
     );

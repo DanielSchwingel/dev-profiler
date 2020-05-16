@@ -69,18 +69,19 @@ export default StyleSheet.create({
     
     footer:{
         backgroundColor: '#282D43',
-        height: 20,
+        height: 60,
         marginTop: 10,
         alignItems: 'center',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         width:'100%',
         flexDirection: 'row'
     },
     
-    textFooter : {
-        fontFamily: 'FredokaOne-Regular',
-        marginRight: 20,
-        color: '#FFF'
-    },
+    logo:{
+        width: 62,
+        height: 47
+    }
+
+
 
 });

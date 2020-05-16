@@ -9,8 +9,8 @@ import api from '../../services/api';
 import ListEmpty from '../../components/ListEmpty';
 
 
-export default function Profile() {
-    const [following, setFollowing] = useState([]);
+export default function Orgs() {
+    const [orgs, setOrgs] = useState([]);
     const route = useRoute();
     const navigation = useNavigation();
 
@@ -20,17 +20,13 @@ export default function Profile() {
         navigation.goBack();
     }
 
-    function analyzeFollowing(userLogin){
-        navigation.navigate('Profile', {userLogin});
-    }
-
-    async function loadFollowing(){
-        const response = await api.get(`users/${user.login}/following`);
-        setFollowing(response.data);
+    async function loadOrgs(){
+        const response = await api.get(`users/${user.login}/orgs`);
+        setOrgs(response.data);
     }
 
     useEffect(() =>{
-        loadFollowing();
+        loadOrgs();
     }, []);
 
     return (
@@ -41,24 +37,21 @@ export default function Profile() {
                 </TouchableOpacity>
             </View>
                 <Image source={{uri: user.avatar_url}} style={styles.picture} />
-                <Text style={styles.title}>SEGUINDO</Text>
+                <Text style={styles.title}>ORGANIZAÇÕES</Text>
                 <FlatList
-                style={styles.followingList}
-                data={following}
-                keyExtractor={follow => follow.node_id}
+                style={styles.orgsList}
+                data={orgs}
+                keyExtractor={org => org.node_id}
                 ListEmptyComponent={<ListEmpty />}
                 showsVerticalScrollIndicator={false}
-                renderItem={({item:follow})=>(
+                renderItem={({item:org})=>(
                     <View style={styles.box}> 
-                        <Image source={{uri: follow.avatar_url}} style={styles.followingPicture} />
-                        <View style={styles.followingData}>
-                            <Text style={styles.followingProperty}>Usuário</Text>               
-                            <Text style={styles.followingValue}>{follow.login}</Text>
-                            <TouchableOpacity style={styles.button} onPress={()=>{analyzeFollowing(follow.login)}}>
-                                <Feather name="search" size={18} color="#FFF"/>
-                                <Text style={styles.buttonText}>ANALISAR</Text>
-                            </TouchableOpacity>
-
+                        <Image source={{uri: org.avatar_url}} style={styles.orgsPicture} />
+                        <View style={styles.orgsData}>
+                            <Text style={styles.orgsProperty}>Nome</Text>               
+                            <Text style={styles.orgsValue}>{org.login}</Text>
+                            <Text style={styles.orgsProperty}>Descrição</Text>               
+                            <Text style={styles.orgsValue}>{org.description}</Text>
                         </View>
                     </View>
                 )}

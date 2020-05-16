@@ -29,6 +29,10 @@ export default function Profile() {
         navigation.navigate('Following', {user});
     }
 
+    function navigateToOrgs(){
+        navigation.navigate('Orgs', {user});
+    }
+
     async function loadUser(){
         const response = await api.get(`users/${userLogin}`);
         setUser(response.data)
@@ -79,7 +83,7 @@ export default function Profile() {
                 </TouchableOpacity>
             </View>
             <View style={styles.action}>
-                <TouchableOpacity style={styles.button} onPress={()=>{}}>
+                <TouchableOpacity style={styles.button} onPress={navigateToOrgs}>
                     <Feather name="clipboard" size={18} color="#FFF" />
                     <Text style={styles.buttonText}>ORGANIZAÇÕES</Text>
                 </TouchableOpacity>

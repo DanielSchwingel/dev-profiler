@@ -35,7 +35,7 @@ export default StyleSheet.create({
         marginTop: 60,
     },
 
-    followingList:{
+    orgsList:{
         width: '90%',
     },
 
@@ -49,15 +49,14 @@ export default StyleSheet.create({
 
     },
 
-    followingProperty: {
+    orgsProperty: {
         fontSize: 15,
         fontWeight: 'bold',
         color: '#41414d',
         marginLeft: 10,
-        marginTop:10
     },
 
-    followingValue: {
+    orgsValue: {
         fontSize: 14,
         color: '#737380',
         marginLeft: 10,
@@ -65,12 +64,12 @@ export default StyleSheet.create({
         textAlign: 'justify'
     },
 
-    followingPicture:{
+    orgsPicture:{
         height: 100,
         width: 100,
     },
 
-    followingData:{
+    orgsData:{
         flexDirection: 'column',
         width: '60%',
     },
