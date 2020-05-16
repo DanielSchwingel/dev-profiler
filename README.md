@@ -2,10 +2,9 @@
 <h4 align = "center">
   App de consultas à API do GitHub! Consulte seu perfil também dev! Bora?
 </h4>
-<br>
+
 <h3>:muscle: Projeto</h3> 
 <p>O <b>Dev Profiler</b> foi desenvolvido com intuito de praticar um pouco mais o conteúdo aprendido na <b>Semana OmniStack</b> da <a href="https://github.com/Rocketseat">RocketSeat</a>, sendo assim, meu primeiro App!</p>
-<br>
 
 <h3>:rocket: Tecnologias</h3>
 <p>Esse projeto foi realizado com as seguintes tecnolgias:</p>
