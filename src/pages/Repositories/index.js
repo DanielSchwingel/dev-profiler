@@ -5,12 +5,14 @@ import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 import ListEmpty from '../../components/ListEmpty';
+import ListLoading from '../../components/ListLoading';
 import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Repositories(){
     const [repositories, setRepositories] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const route = useRoute();
     const navigation = useNavigation();
@@ -24,23 +26,15 @@ export default function Repositories(){
         const response = await api.get(`users/${user.login}/repos?sort=updated`
         );
         setRepositories(response.data);
+        setLoading(true);
     }
 
-    useEffect(() =>{
-        loadRepositories();
-    }, []);
-
-    return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity style={styles.buttonHead} onPress={navigateToBack}>
-                    <Feather name="arrow-left" size={24} color="#F12639" />
-                </TouchableOpacity>
-            </View>
-            <Image source={{uri: user.avatar_url}} style={styles.picture} />
-            <Text style={styles.title}>REPOSITÓRIOS</Text>
-            <Text style={styles.obs}>*Ultimos repositórios alterados*</Text>   
-            <FlatList
+    const ListRepositories = () =>{
+        if (loading === false) {
+            return <ListLoading/>
+        } else {
+            return(
+                <FlatList
                 style={styles.repositoryList}
                 ListEmptyComponent={<ListEmpty/>}
                 data={repositories}
@@ -67,7 +61,27 @@ export default function Repositories(){
                         <Text style={[styles.repositoryValue, {marginBottom: 10}]}>{repositorie.forks}</Text>
                     </View>
                 )}
-            />
+                />
+            )
+        }
+    };
+
+
+    useEffect(() =>{
+        loadRepositories();
+    }, []);
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.buttonHead} onPress={navigateToBack}>
+                    <Feather name="arrow-left" size={24} color="#F12639" />
+                </TouchableOpacity>
+            </View>
+            <Image source={{uri: user.avatar_url}} style={styles.picture} />
+            <Text style={styles.title}>REPOSITÓRIOS</Text>
+            <Text style={styles.obs}>*Ultimos repositórios alterados*</Text>   
+            <ListRepositories />
             <View style={styles.footer}>
                 <Image source={logoImg} style={styles.logo}/>
             </View>                

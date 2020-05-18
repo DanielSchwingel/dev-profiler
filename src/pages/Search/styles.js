@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: '#282D43',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
 
     logo:{
@@ -36,7 +36,7 @@ export default StyleSheet.create({
     buttonText:{
         fontFamily: 'FredokaOne-Regular',
         color: '#fff',
-        fontSize: 20,
+        fontSize: 20
     }
 
   });

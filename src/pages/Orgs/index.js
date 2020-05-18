@@ -7,10 +7,12 @@ import logoImg from '../../assets/logo.png';
 import styles from './styles';
 import api from '../../services/api';
 import ListEmpty from '../../components/ListEmpty';
+import ListLoading from '../../components/ListLoading';
 
 
 export default function Orgs() {
     const [orgs, setOrgs] = useState([]);
+    const [loading, setLoading] = useState(false);
     const route = useRoute();
     const navigation = useNavigation();
 
@@ -18,26 +20,19 @@ export default function Orgs() {
 
     function navigateBack() {
         navigation.goBack();
-    }
+    };
 
     async function loadOrgs(){
         const response = await api.get(`users/${user.login}/orgs`);
         setOrgs(response.data);
-    }
+        setLoading(true);
+    };
 
-    useEffect(() =>{
-        loadOrgs();
-    }, []);
-
-    return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity style={styles.buttonHead} onPress={navigateBack}>
-                    <Feather name="arrow-left" size={24} color="#F12639" />
-                </TouchableOpacity>
-            </View>
-                <Image source={{uri: user.avatar_url}} style={styles.picture} />
-                <Text style={styles.title}>ORGANIZAÇÕES</Text>
+    const ListOrgs = () =>{
+        if (loading === false) {
+            return <ListLoading/>;
+        } else {
+            return(
                 <FlatList
                 style={styles.orgsList}
                 data={orgs}
@@ -56,6 +51,24 @@ export default function Orgs() {
                     </View>
                 )}
                 />
+            )
+        }
+    };
+
+    useEffect(() =>{
+        loadOrgs();
+    }, []);
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.buttonHead} onPress={navigateBack}>
+                    <Feather name="arrow-left" size={24} color="#F12639" />
+                </TouchableOpacity>
+            </View>
+                <Image source={{uri: user.avatar_url}} style={styles.picture} />
+                <Text style={styles.title}>ORGANIZAÇÕES</Text>
+                <ListOrgs />
             <View style={styles.footer}>
                 <Image source={logoImg} style={styles.logo}/>
             </View>  

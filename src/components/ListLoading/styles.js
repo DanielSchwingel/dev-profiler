@@ -4,7 +4,8 @@ export default StyleSheet.create({
     container:{
         alignItems: 'center',
         justifyContent: 'center',
-        flex: .85,
+        flex: 1,
+        padding: 20
     },
 
     box:{
@@ -13,11 +14,13 @@ export default StyleSheet.create({
         borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
+        minWidth: '100%',
+        height: '100%'
     },
 
     animation: {
         width: 150,
-        height: 150,
+        height: 150
     },
 
     text :{

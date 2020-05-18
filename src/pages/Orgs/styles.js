@@ -37,6 +37,7 @@ export default StyleSheet.create({
 
     orgsList:{
         width: '90%',
+        flex: .8
     },
 
     box:{
@@ -98,7 +99,7 @@ export default StyleSheet.create({
 
     footer:{
         backgroundColor: '#282D43',
-        height: 60,
+        flex: .15,
         marginTop: 10,
         alignItems: 'center',
         justifyContent: 'center',

@@ -38,45 +38,7 @@ export default function Profile() {
             return <ListLoading/>;
         } else {
             return(
-                    <FlatList
-                    style={styles.followingList}
-                    data={following}
-                    keyExtractor={follow => follow.node_id}
-                    ListEmptyComponent={<ListEmpty />}
-                    showsVerticalScrollIndicator={false}
-                    renderItem={({item:follow})=>(
-                        <View style={styles.box}> 
-                            <Image source={{uri: follow.avatar_url}} style={styles.followingPicture} />
-                            <View style={styles.followingData}>
-                                <Text style={styles.followingProperty}>Usuário</Text>               
-                                <Text style={styles.followingValue}>{follow.login}</Text>
-                                <TouchableOpacity style={styles.button} onPress={()=>{analyzeFollowing(follow.login)}}>
-                                    <Feather name="search" size={18} color="#FFF"/>
-                                    <Text style={styles.buttonText}>ANALISAR</Text>
-                                </TouchableOpacity>
-
-                            </View>
-                        </View>
-                    )}
-                    />
-            )
-        }
-    }
-
-    useEffect(() =>{
-        loadFollowing();
-    }, []);
-
-    return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity style={styles.buttonHead} onPress={navigateBack}>
-                    <Feather name="arrow-left" size={24} color="#F12639" />
-                </TouchableOpacity>
-            </View>
-                <Image source={{uri: user.avatar_url}} style={styles.picture} />
-                <Text style={styles.title}>SEGUINDO</Text>
-                {/* <FlatList
+                <FlatList
                 style={styles.followingList}
                 data={following}
                 keyExtractor={follow => follow.node_id}
@@ -96,7 +58,24 @@ export default function Profile() {
                         </View>
                     </View>
                 )}
-                /> */}
+                />
+            )
+        }
+    }
+
+    useEffect(() =>{
+        loadFollowing();
+    }, []);
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.buttonHead} onPress={navigateBack}>
+                    <Feather name="arrow-left" size={24} color="#F12639" />
+                </TouchableOpacity>
+            </View>
+                <Image source={{uri: user.avatar_url}} style={styles.picture} />
+                <Text style={styles.title}>SEGUINDO</Text>
                 <ListFollowing />
             <View style={styles.footer}>
                 <Image source={logoImg} style={styles.logo}/>
