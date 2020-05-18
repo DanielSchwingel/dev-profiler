@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { View, Text} from 'react-native';
+import LottieView from 'lottie-react-native';
 
-import boxImg from '../../assets/box.png';
+import loading from '../../assets/loading.json';
 import styles from './styles';
 
 export default function ListEmpty(){
     return(
         <View style={styles.container}>
-            <Image source={boxImg} style={styles.image} />
+            <LottieView style={styles.animation} source={loading} resizeMode='contain' autoPlay loop/>
             <Text style={styles.title}>Ooops....</Text>
             <Text style={styles.description}>No momento, não temos nada pra mostrar por aqui! Bora trabalhar Dev!</Text>
         </View>

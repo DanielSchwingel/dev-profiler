@@ -2,13 +2,17 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container:{
-        width: '100%',
-        backgroundColor: '#FFF',
-        borderRadius: 8,
-        marginTop: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10
+        flex: .85,
+    },
+
+    box:{
+        backgroundColor: '#FFF',
+        padding: 20,
+        borderRadius: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     animation: {
@@ -16,18 +20,10 @@ export default StyleSheet.create({
         height: 150,
     },
 
-    title :{
+    text :{
         fontFamily: 'FredokaOne-Regular',
-        fontSize: 40,
         color: '#41414d',
-        marginBottom: 20
-    },
-
-    description: {
-        fontFamily: 'FredokaOne-Regular',
-        fontSize: 15,
-        color: '#737380',
-        marginBottom: 20,
-        textAlign: 'center',
+        fontSize: 20,
+        marginTop: 20
     }
 });
