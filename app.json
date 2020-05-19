@@ -26,10 +26,7 @@
     },
     "android": {
       "package": "com.daniel.devprofiler",
-      "versionCode": 1,
-      "adaptiveIcon":{
-        "backgroundColor":"#282D43"
-      }
+      "versionCode": 1
     }
   }
 }
