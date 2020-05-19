@@ -3,7 +3,7 @@
   App de consultas à API do GitHub! Consulte seu perfil também dev! Bora?
 </h4>
 <p align = "center">
-  <img alt = "Demo no DevProfiler" src = "https://i.imgur.com/JIIeuBK.gif" width="200" height="350">
+  <img alt = "Demo no DevProfiler" src = "https://i.imgur.com/JIIeuBK.gif" width="210" height="400">
 </p>
 <h3>:muscle: Projeto</h3> 
 <p>O <b>Dev Profiler</b> foi desenvolvido com intuito de praticar um pouco mais o conteúdo aprendido na <b>Semana OmniStack</b> da <a href="https://github.com/Rocketseat">RocketSeat</a>, sendo assim, meu primeiro App!</p>
